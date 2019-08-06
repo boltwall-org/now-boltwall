@@ -22,16 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use('*', (req, res, next) => {
-  console.log('boltwall:', boltwall())
-  console.log('protectedRoute:', protectedRoute)
-  console.log('here is the original url:', req.originalUrl)
-  console.log('here is the path:', req.path)
-  console.log('and here is the req.url:', req.url)
-  console.log('and here is the base:', req.baseUrl)
-  next()
-})
-app.use('/', boltwall(TIME_CAVEAT_CONFIGS))
+app.use(boltwall(TIME_CAVEAT_CONFIGS))
 
 router.use(protectedRoute)
 
