@@ -1,6 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 const replaceStream = require('replacestream')
+const s = require('stream')
 
 const {
   FileBlob,
@@ -94,14 +95,14 @@ module.exports = {
     //   stream: pkgStream,
     //   fsPath: path.join(virtualDir, 'package.json'),
     // })
-    // const pkgStream = fs.createReadStream(
-    //   path.join(__dirname, 'server/package.json')
-    // )
 
-    // virtualFiles['package.json'] = await FileFsRef.fromStream({
-    //   stream: pkgStream,
-    //   fsPath: path.join(virtualDir, 'package.json'),
-    // })
+    // const pkgStream = fs.createReadStream(path.join(virtualDir, 'package.json'))
+    const pkgStream = files['package.json'].toStream()
+
+    virtualFiles['package.json'] = await FileFsRef.fromStream({
+      stream: pkgStream,
+      fsPath: path.join(virtualDir, 'package.json'),
+    })
 
     // console.log(
     //   'package.json exists?',
@@ -169,7 +170,7 @@ module.exports = {
     // set entrypoint to new file ref
     // This must be after user's entrypoint has been moved to _entrypoint reference
 
-    // virtualFiles[entrypoint] = updatedEntrypoint
+    virtualFiles[entrypoint] = updatedEntrypoint
 
     console.log('virtualDir:', virtualDir)
     console.log('workPath:', workPath)

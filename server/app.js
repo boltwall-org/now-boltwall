@@ -9,9 +9,9 @@ const cors = require('cors')
 var bodyParser = require('body-parser')
 const { boltwall, TIME_CAVEAT_CONFIGS } = require('boltwall')
 
-let protectedRoute = require('./_entrypoint')
+// let protectedRoute = require('./_entrypoint')
 
-const router = express.Router()
+// const router = express.Router()
 
 const app = express()
 
@@ -24,8 +24,8 @@ app.use(bodyParser.json())
 
 app.use(boltwall(TIME_CAVEAT_CONFIGS))
 
-router.use(protectedRoute)
+// router.use(protectedRoute)
 
-app.use('*/protected', router)
+// app.use('*/protected', router)
 
 module.exports = app
