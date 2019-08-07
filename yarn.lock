@@ -90,17 +90,42 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@now/node@^0.12.3":
-  version "0.12.3"
-  resolved "https://registry.yarnpkg.com/@now/node/-/node-0.12.3.tgz#604428ff4442515a63a1e158a72f854789a81d09"
-  integrity sha512-0Pcsx901mjFRnfb17uK/7SArUZvmLyicXM4twwUKJeaEv0OQZSZJQDwUGGd+8lxpijCSsc3TEfLYhH/ntmTy3g==
+"@now/build-utils@0.9.10":
+  version "0.9.10"
+  resolved "https://registry.yarnpkg.com/@now/build-utils/-/build-utils-0.9.10.tgz#5199f45bf3f99d9175c9955e1cc9fdfba48457a9"
+  integrity sha512-zYBDyY5uypOaGsO0xgJoaYtKqDsFZ2szczerZFUlq3iNiz1QymYuauwWhoRDQqK0e+hKzzythzi0gSKxTK85Xg==
+
+"@now/node-bridge@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@now/node-bridge/-/node-bridge-1.2.2.tgz#b4740d8806227b8dd1d4d8481e21b3b30ad299b4"
+  integrity sha512-E5xqal3QRN8RvcQ4Q82vtg/hvWmQWaIYp2bJHd550Ps/kemGabcwAAQsP/TUM/4b5oYlOmjrfuYPq9AhMvFqkQ==
+
+"@now/node@0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@now/node/-/node-0.11.1.tgz#f0d2fa43ee3ded69341763b7b1c890227e90ab13"
+  integrity sha512-2nGzxozS6aH3vIOOX6xggnHNiBLuc9awAPTP2w1DGu5LWU8Jg48y8U53Hlk4/zTWqdpByw9zwndNgzyFOVQOAA==
   dependencies:
+    "@now/node-bridge" "1.2.2"
     "@types/node" "*"
+    "@zeit/ncc" "0.18.5"
+    "@zeit/ncc-watcher" "1.0.3"
 
 "@types/node@*":
   version "12.7.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.0.tgz#545dde2a1a5c27d281cfb8308d6736e0708f5d6c"
   integrity sha512-vqcj1MVm2Sla4PpMfYKh1MyDN4D2f/mPIZD7RdAGqEsbE+JxfeqQHHVbRDQ0Nqn8i73gJa1HQ1Pu3+nH4Q0Yiw==
+
+"@zeit/ncc-watcher@1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@zeit/ncc-watcher/-/ncc-watcher-1.0.3.tgz#c4569d13db7b80a96a7672047c069400e69913ae"
+  integrity sha512-367wm9bGMBCwT8kHQckw8UY/iYhC9rdzj357FBoM0SjVvWv53yziEmd12RkeF1EsBs0F2a1uBYdUaUvGo6LfkA==
+  dependencies:
+    "@zeit/ncc" "^0.18.5"
+
+"@zeit/ncc@0.18.5", "@zeit/ncc@^0.18.5":
+  version "0.18.5"
+  resolved "https://registry.yarnpkg.com/@zeit/ncc/-/ncc-0.18.5.tgz#5687df6c32f1a2e2486aa110b3454ccebda4fb9c"
+  integrity sha512-F+SbvEAh8rchiRXqQbmD1UmbePY7dCOKTbvfFtbVbK2xMH/tyri5YKfNxXKK7eL9EWkkbqB3NTVQO6nokApeBA==
 
 acorn-jsx@^5.0.0:
   version "5.0.1"
@@ -454,7 +479,7 @@ flatted@^2.0.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.1.tgz#69e57caa8f0eacbc281d2e2cb458d46fdb449e08"
   integrity sha512-a1hQMktqW9Nmqr5aktAux3JMNqaucxGcjtjWnZLHX7yyPCmlSV3M54nGYbqT8K+0GhF3NBgmJCc3ma+WOgX8Jg==
 
-fs-extra@^8.1.0:
+fs-extra@8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
   integrity sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
@@ -796,7 +821,7 @@ regexpp@^2.0.1:
   resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-2.0.1.tgz#8d19d31cf632482b589049f8281f93dbcba4d07f"
   integrity sha512-lv0M6+TkDVniA3aD1Eg0DVpfU/booSu7Eev3TDO/mZKHBfVjgCGTV4t4buppESEYDtkArYFOxTJWv6S5C+iaNw==
 
-replacestream@^4.0.3:
+replacestream@4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/replacestream/-/replacestream-4.0.3.tgz#3ee5798092be364b1cdb1484308492cb3dff2f36"
   integrity sha512-AC0FiLS352pBBiZhd4VXB1Ab/lh0lEgpP+GGvZqbQh8a5cmXVoTe5EX/YeTFArnp4SRGTHh1qCHu9lGs1qG8sA==

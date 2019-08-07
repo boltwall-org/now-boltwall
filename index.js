@@ -1,7 +1,6 @@
 const fs = require('fs-extra')
 const path = require('path')
 const replaceStream = require('replacestream')
-const s = require('stream')
 
 const {
   FileBlob,
@@ -170,7 +169,7 @@ module.exports = {
     // set entrypoint to new file ref
     // This must be after user's entrypoint has been moved to _entrypoint reference
 
-    virtualFiles['app.js'] = updatedEntrypoint
+    // virtualFiles[entrypoint] = updatedEntrypoint
 
     console.log('virtualDir:', virtualDir)
     console.log('workPath:', workPath)
@@ -178,7 +177,7 @@ module.exports = {
     console.log('and now back to your regularly scheduled @now/node builder')
     // return a build using the tmp directory, tmp files, and workPath set to virtualDir
     return nowBuilder.build({
-      entrypoint: 'app.js',
+      entrypoint,
       files: virtualFiles,
       workPath,
       ...rest,
